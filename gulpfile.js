@@ -17,21 +17,28 @@ function browsersync() {
 }
 
 function styles() {
-  return src("app/scss/style.scss")
-    .pipe(scss({ outputStyle: "compressed" }).on("error", scss.logError))
-    .pipe(concat("style.min.css"))
-    .pipe(
-      autoprefixer({
-        overrideBrowserslist: ["last 10 version"],
-        grid: true,
-      })
-    )
-    .pipe(dest("app/css"))
-    .pipe(browserSync.stream());
+  return (
+    src("app/scss/style.scss")
+      // outputStyle: "expanded" "compressed"
+      .pipe(scss({ outputStyle: "compressed" }).on("error", scss.logError))
+      .pipe(concat("style.min.css"))
+      .pipe(
+        autoprefixer({
+          overrideBrowserslist: ["last 10 version"],
+          grid: true,
+        })
+      )
+      .pipe(dest("app/css"))
+      .pipe(browserSync.stream())
+  );
 }
 
 function scripts() {
-  return src(["node_modules/jquery/dist/jquery.js", "app/js/main.js"])
+  return src([
+    "node_modules/jquery/dist/jquery.js",
+    "app/js/mixitup.min.js",
+    "app/js/main.js",
+  ])
     .pipe(concat("main.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js"))
@@ -76,5 +83,4 @@ exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
-
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel( styles, scripts, browsersync, watching);
