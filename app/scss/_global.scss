@@ -1,5 +1,6 @@
 body {
-	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 	@extend %OpenSans-400;
 	font-size: 14px;
 	line-height: 1.4;
@@ -7,6 +8,10 @@ body {
 	color: $dark-900;
 	background-color: $white;
 	overflow-x: hidden;
+}
+
+.main {
+	flex-grow: 1;
 }
 
 .container {
