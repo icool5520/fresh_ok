@@ -1,0 +1,66 @@
+.advantages {
+  li {
+    padding-left: 75px;
+
+    &:not(:last-child) {
+      margin-right: 65px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 29px;
+
+    &::before {
+      @extend %background-before;
+      background-color: $silver-100;
+    }
+  }
+
+  &__free-shipping,
+  &__product-return,
+  &__support {
+    position: relative;
+    max-width: 265px;
+    width: 100%;
+
+    &:before {
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      @extend %icon-before;
+    }
+  }
+
+  &__free-shipping {
+    &:before {
+      background-image: url("../images/sprite.svg#icon-scooter");
+    }
+  }
+
+  &__product-return {
+    &:before {
+      background-image: url("../images/sprite.svg#icon-return-box");
+    }
+  }
+
+  &__support {
+    &:before {
+      background-image: url("../images/sprite.svg#icon-24-hours");
+    }
+  }
+
+  &__title {
+    @extend %OpenSans-600;
+    font-size: 16px;
+    letter-spacing: normal;
+    margin-bottom: 6px;
+  }
+
+  &__subtitle {
+    letter-spacing: normal;
+  }
+}

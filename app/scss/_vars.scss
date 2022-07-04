@@ -1,0 +1,73 @@
+// Colors
+$green-hov: #4D810C;
+$green-900: #63A60F;
+$green-800: #63A60E;
+$green-200: #E0EDCF;
+$green-100: #EFF6E7;
+$dark-900: #121212;
+$dark-800: #31352B;
+$dark-email: #4F4F4F;
+$dark-500: #505050;
+$red-900: #CF3E3B;
+$orange-900: #FF7A00;
+$yellow-900: #FFB800;
+$silver-600: #C1C1C1;
+$silver-500: #C4C4C4;
+$silver-100: #F6F6F6;
+$silver-50: #f2f2f2;
+$white: #FFFFFF;
+
+// Fonts
+%OpenSans-300 {
+	font-family: 'OpenSans', sans-serif;
+	font-weight: 300;
+}
+
+%OpenSans-400 {
+	font-family: 'OpenSans', sans-serif;
+	font-weight: 400;
+}
+
+%OpenSans-600 {
+	font-family: 'OpenSans', sans-serif;
+	font-weight: 600;
+}
+
+%OpenSans-700 {
+	font-family: 'OpenSans', sans-serif;
+	font-weight: 700;
+}
+
+%Ruda-600 {
+	font-family: 'Ruda', sans-serif;
+	font-weight: 600;
+}
+
+%Ruda-700 {
+	font-family: 'Ruda', sans-serif;
+	font-weight: 700;
+}
+
+%Ruda-900 {
+	font-family: 'Ruda', sans-serif;
+	font-weight: 900;
+}
+
+// Others
+%icon-before {
+	position: absolute;
+	content: '';
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center center;
+}
+
+%background-before {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: -50%;
+	width: 200%;
+	height: 100%;
+	content: "";
+}

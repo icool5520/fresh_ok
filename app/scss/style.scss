@@ -1,8 +1,14 @@
-@import 'vars';
-@import 'fonts';
-@import 'reset';
-@import 'global';
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "vars";
+@import "global";
+@import "components/header";
+@import "components/hero";
+@import "components/footer";
+@import "components/advantages";
+@import "components/top-product";
 
 
 
-@import 'media';
+the style.sсss file is divided into components, the creation of a svg-sprite has been added. svg-files paths corrected
