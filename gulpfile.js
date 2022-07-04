@@ -6,6 +6,9 @@ const uglify = require("gulp-uglify");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
 const browserSync = require("browser-sync").create();
+const svgSprite = require("gulp-svg-sprite");
+const cheerio = require("gulp-cheerio");
+const replace = require("gulp-replace");
 
 function browsersync() {
   browserSync.init({
@@ -33,10 +36,27 @@ function styles() {
   );
 }
 
+//!------------------del----stylesEx-------------------\/
+function stylesEx() {
+  return src("app/scss/style.scss")
+    .pipe(scss({ outputStyle: "expanded" }).on("error", scss.logError))
+    .pipe(concat("style.css"))
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 10 version"],
+        grid: true,
+      })
+    )
+    .pipe(dest("app/css"))
+    .pipe(browserSync.stream());
+}
+//!--------------------------------------------/\
+
 function scripts() {
   return src([
     "node_modules/jquery/dist/jquery.js",
-    "app/js/mixitup.min.js",
+    "node_modules/mixitup/dist/mixitup.js",
+    "node_modules/swiper/swiper-bundle.js",
     "app/js/main.js",
   ])
     .pipe(concat("main.min.js"))
@@ -60,6 +80,31 @@ function images() {
     .pipe(dest("dist/images"));
 }
 
+function svgSprites() {
+  return src("app/images/icons/*.svg") // выбираем в папке с иконками все файлы с расширением svg
+    .pipe(
+      cheerio({
+        run: ($) => {
+          $("[fill]").removeAttr("fill"); // очищаем цвет у иконок по умолчанию, чтобы можно было задать свой
+          $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
+          $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
+        },
+        parserOptions: { xmlMode: true },
+      })
+    )
+    .pipe(replace("&gt;", ">"))
+    .pipe(
+      svgSprite({
+        mode: {
+          stack: {
+            sprite: "../sprite.svg", // указываем имя файла спрайта и путь
+          },
+        },
+      })
+    )
+    .pipe(dest("app/images")); // указываем, в какую папку поместить готовый файл спрайта
+}
+
 function build() {
   return src(["app/**/*.html", "app/css/style.min.css", "app/js/main.min.js"], {
     base: "app",
@@ -72,15 +117,31 @@ function cleanDist() {
 
 function watching() {
   watch(["app/scss/**/*.scss"], styles);
+  //! Временно-------stylesEx---------
+  watch(["app/scss/**/*.scss"], stylesEx);
+  //! Временно----------------
   watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
+  watch(["app/images/icons/*.svg"], svgSprites);
   watch(["app/**/*.html"]).on("change", browserSync.reload);
 }
 
 exports.styles = styles;
+//! Временно------stylesEx----------
+exports.stylesEx = stylesEx;
+//! Временно----------------
 exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
+exports.svgSprites = svgSprites;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
-exports.default = parallel( styles, scripts, browsersync, watching);
+//! Временно------stylesEx-------------\/
+exports.default = parallel(
+  stylesEx,
+  styles,
+  scripts,
+  svgSprites,
+  browsersync,
+  watching
+);

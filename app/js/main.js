@@ -5,10 +5,10 @@ $(function(){
     loopedSlides: 3,
     speed: 2000,
     autoHeight: true,
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: true,
-    },
+    // autoplay: {
+    //   delay: 6000,
+    //   disableOnInteraction: true,
+    // },
 
     navigation: {
       nextEl: ".swiper-button-next",
@@ -25,7 +25,7 @@ $(function(){
     $('.catalog__btn').toggleClass("active");
     $(".catalog__list").toggleClass("active");
 	});
-	
+
 	$(".catalog__list").mouseleave(function () {
     $(".catalog__list.active").removeClass("active");
 	});
