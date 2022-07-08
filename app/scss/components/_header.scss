@@ -23,7 +23,7 @@
 		padding: 25px 0;
     display: flex;
     align-items: center;
-		
+
     &::before {
       @extend %background-before;
       background-color: $green-900;
@@ -40,7 +40,7 @@
   &__item {
     &:not(:last-child) {
       margin-right: 24px;
-			transition: all 0.3s;
+			transition: color 0.3s, opacity 0.3s, box-shadow 0.3s, background-color 0.3s;
     }
 
     &:first-child {
@@ -125,7 +125,7 @@
     border: none;
     color: $green-900;
     outline-color: $green-800;
-    transition: all 0.3s;
+    transition: opacity 0.3s, box-shadow 0.3s, background-color 0.3s;
 
     &:before {
       background-image: url("../../images/icons/icon-nav.svg");
@@ -185,7 +185,7 @@
     background-color: $white;
     border-radius: 0 0 6px 6px;
 		opacity: 0;
-		transition: all 0.5s;
+		transition: opacity 0.3s;
 
     &.active {
 			opacity: 1;
@@ -202,7 +202,7 @@
     padding: 15px 0 15px 24px;
 		font-size: 16px;
     line-height: 1.2;
-    transition: all 0.3s;
+    transition: color 0.3s, box-shadow 0.3s;
 
     &:hover {
       border-left: 3px solid $green-800;
@@ -272,7 +272,7 @@
     color: $white;
     outline: transparent;
     border: none;
-    transition: all 0.3s;
+    transition: opacity 0.3s, box-shadow 0.3s, color 0.3s;
 
     &:hover {
       opacity: 0.85;
@@ -309,7 +309,7 @@
     width: 50px;
     height: 50px;
     text-align: center;
-    transition: all 0.3s;
+    transition: box-shadow 0.3s, background-color 0.3s;
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.1);
