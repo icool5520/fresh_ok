@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "fonts";
 @import "reset";
 @import "libs";
@@ -5,10 +6,11 @@
 @import "global";
 @import "components/header";
 @import "components/hero";
-@import "components/footer";
 @import "components/advantages";
 @import "components/top-product";
-
-
-
-the style.sсss file is divided into components, the creation of a svg-sprite has been added. svg-files paths corrected
+@import "components/filter";
+@import "components/product-card";
+@import "components/badges";
+@import "components/price-tag";
+@import "components/footer";
+@import "components/form-subscribe";

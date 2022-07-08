@@ -1,0 +1,27 @@
+.price-tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  &__price {
+    display: block;
+    padding-left: 4px;
+    max-width: 45px;
+    line-height: 1;
+
+    &--old {
+      position: relative;
+      color: $silver-600;
+			margin-bottom: 3px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        border-bottom: 1px solid $silver-600;
+        transform: rotate(-15deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.badges {
+  &__item {
+    display: block;
+    padding: 3px 6px;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 6px;
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+
+    &--new {
+      max-width: 66px;
+      background-color: $green-900;
+    }
+
+    &--discount {
+      max-width: 37px;
+      background-color: $red-900;
+    }
+
+    &--hit {
+      max-width: 34px;
+      background-color: $orange-900;
+    }
+  }
+}

@@ -1,12 +1,4 @@
 .advantages {
-  li {
-    padding-left: 75px;
-
-    &:not(:last-child) {
-      margin-right: 65px;
-    }
-  }
-
   &__content {
     position: relative;
     display: flex;
@@ -19,48 +11,45 @@
     }
   }
 
-  &__free-shipping,
-  &__product-return,
-  &__support {
-    position: relative;
+  &__item {
+    padding-left: 75px;
+		position: relative;
     max-width: 265px;
     width: 100%;
+		letter-spacing: normal;
+    &:not(:last-child) {
+      margin-right: 65px;
+    }
 
-    &:before {
-      top: 0;
-      left: 0;
-      width: 50px;
-      height: 50px;
-      @extend %icon-before;
+      &:before {
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        @extend %icon-before;
+      }
+
+    &--free-shipping {
+      &:before {
+        background-image: url("../../images/icons/icon-scooter.svg");
+      }
+    }
+
+    &--product-return {
+      &:before {
+        background-image: url("../../images/icons/icon-return-box.svg");
+      }
+    }
+
+    &--support {
+      &:before {
+        background-image: url("../../images/icons/icon-24-hours.svg");
+      }
     }
   }
-
-  &__free-shipping {
-    &:before {
-      background-image: url("../images/sprite.svg#icon-scooter");
-    }
-  }
-
-  &__product-return {
-    &:before {
-      background-image: url("../images/sprite.svg#icon-return-box");
-    }
-  }
-
-  &__support {
-    &:before {
-      background-image: url("../images/sprite.svg#icon-24-hours");
-    }
-  }
-
   &__title {
-    @extend %OpenSans-600;
+    font-weight: 600;
     font-size: 16px;
-    letter-spacing: normal;
     margin-bottom: 6px;
-  }
-
-  &__subtitle {
-    letter-spacing: normal;
   }
 }
