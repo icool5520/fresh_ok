@@ -105,6 +105,20 @@ function svgSprites() {
     .pipe(dest("app/images")); // указываем, в какую папку поместить готовый файл спрайта
 }
 
+function svgSpritesPartners() {
+  return src("app/images/Partners/*.svg") // выбираем в папке с иконками все файлы с расширением svg
+    .pipe(
+      svgSprite({
+        mode: {
+          stack: {
+            sprite: "../partners.svg", // указываем имя файла спрайта и путь
+          },
+        },
+      })
+    )
+    .pipe(dest("app/images")); // указываем, в какую папку поместить готовый файл спрайта
+}
+
 function build() {
   return src(["app/**/*.html", "app/css/style.min.css", "app/js/main.min.js"], {
     base: "app",
@@ -134,6 +148,7 @@ exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
 exports.svgSprites = svgSprites;
+exports.svgSpritesPartners = svgSpritesPartners;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
 //! Временно------stylesEx-------------\/
@@ -141,7 +156,8 @@ exports.default = parallel(
   stylesEx,
   styles,
   scripts,
-  svgSprites,
+	svgSprites,
+	svgSpritesPartners,
   browsersync,
   watching
 );
