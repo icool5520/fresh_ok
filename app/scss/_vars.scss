@@ -18,26 +18,6 @@ $silver-50: #f2f2f2;
 $white: #FFFFFF;
 
 // Fonts
-%OpenSans-300 {
-	font-family: 'OpenSans', sans-serif;
-	font-weight: 300;
-}
-
-%OpenSans-400 {
-	font-family: 'OpenSans', sans-serif;
-	font-weight: 400;
-}
-
-%OpenSans-600 {
-	font-family: 'OpenSans', sans-serif;
-	font-weight: 600;
-}
-
-%OpenSans-700 {
-	font-family: 'OpenSans', sans-serif;
-	font-weight: 700;
-}
-
 %Ruda-600 {
 	font-family: 'Ruda', sans-serif;
 	font-weight: 600;
@@ -55,19 +35,19 @@ $white: #FFFFFF;
 
 // Others
 %icon-before {
-	position: absolute;
 	content: '';
+	position: absolute;
 	background-repeat: no-repeat;
-	background-size: auto;
+	background-size: cover;
 	background-position: center center;
 }
 
 %background-before {
+	content: "";
 	position: absolute;
 	z-index: -1;
 	top: 0;
 	left: -50%;
 	width: 200%;
 	height: 100%;
-	content: "";
 }
