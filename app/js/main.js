@@ -5,10 +5,10 @@ $(function () {
     loopedSlides: 3,
     speed: 2000,
     autoHeight: true,
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: true,
-    },
+    // autoplay: {
+    //   delay: 6000,
+    //   disableOnInteraction: true,
+    // },
 
     navigation: {
       nextEl: ".swiper-button-next",
@@ -30,7 +30,7 @@ $(function () {
   $(".catalog").mouseleave(function () {
     $(".catalog__list.active").removeClass("active");
     $(".catalog__btn.active").removeClass("active");
-    
+
   });
 
   var mixer = mixitup(".top-product__content");
