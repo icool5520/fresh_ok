@@ -19,8 +19,6 @@
     padding: 11px 11px 12px 11px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    border: none;
-    outline: transparent;
 
     &::placeholder {
       font-weight: 400;
@@ -42,8 +40,6 @@
     border-radius: 0 6px 6px 0;
     background-color: $green-800;
     color: $white;
-    outline: transparent;
-    border: none;
     transition: color 0.3s, box-shadow 0.3s, background-color 0.3s;
 
     &:hover {

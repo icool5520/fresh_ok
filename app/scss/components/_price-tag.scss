@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
   &__price {
     display: block;
     padding-left: 4px;
@@ -11,7 +12,7 @@
     &--old {
       position: relative;
       color: $silver-600;
-			margin-bottom: 3px;
+      margin-bottom: 3px;
 
       &:before {
         content: "";

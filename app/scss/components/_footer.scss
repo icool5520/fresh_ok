@@ -2,10 +2,6 @@
   position: relative;
   color: $white;
 
-	&__top {
-		padding: 30px 0 30px;
-	}
-
   &:before {
     @extend %background-before;
     background-color: $dark-800;
@@ -64,14 +60,12 @@
   }
 
   &__item {
-    &--visa,
-    &--mastercard {
       display: block;
       height: 29px;
 			background-size: cover;
       background-position: 0 0;
       background-repeat: no-repeat;
-    }
+
 
     &--visa {
       width: 93px;
@@ -95,6 +89,10 @@
     }
   }
 
+	&__icon {
+		transition: fill 0.3s;
+	}
+
   &__link {
     display: block;
     width: 32px;
@@ -102,7 +100,7 @@
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: color 0.3s, box-shadow 0.3s, opacity 0.3s, fill 0.3s;
+    transition: color 0.3s, box-shadow 0.3s, opacity 0.3s;
 
     &:hover {
       opacity: 0.5;

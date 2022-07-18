@@ -1,21 +1,21 @@
 html {
-	box-sizing: border-box;
-	height: 100%;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 *,
 *::after,
 *::before {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-	height: 100%;
+  height: 100%;
 }
 
 ul,
 ol {
-	padding: 0;
+  padding: 0;
 }
 
 body,
@@ -34,16 +34,16 @@ figcaption,
 blockquote,
 dl,
 dd {
-	margin: 0;
+  margin: 0;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 img {
-	max-width: 100%;
-	display: block;
+  max-width: 100%;
+  display: block;
 }
 
 input,
@@ -51,19 +51,24 @@ button,
 textarea,
 select,
 address {
-	font: inherit;
+  font: inherit;
+}
+
+input {
+  border: none;
+  outline: transparent;
 }
 
 button {
-	background-color: transparent;
-	padding: 0;
-	cursor: pointer;
-	outline: transparent;
-	border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline: transparent;
+  border: none;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
-	outline: transparent;
+  text-decoration: none;
+  color: inherit;
+  outline: transparent;
 }

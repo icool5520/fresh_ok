@@ -1,26 +1,9 @@
 .header {
   position: relative;
 
-  &__top {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding: 17px 0 15px;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 1.38;
-    text-transform: uppercase;
-    color: $white;
-
-    &::before {
-      @extend %background-before;
-      background-color: $dark-800;
-    }
-  }
-
   &__bottom {
     position: relative;
-		padding: 25px 0;
+    padding: 25px 0;
     display: flex;
     align-items: center;
 
@@ -34,23 +17,39 @@
 .info-menu {
   &__list {
     display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 17px 0 15px;
     width: 100%;
     font-weight: 700;
+    font-size: 13px;
+    line-height: 1.38;
+    text-transform: uppercase;
+    color: $white;
+
+    &::before {
+      @extend %background-before;
+      background-color: $dark-800;
+    }
   }
   &__item {
     &:not(:last-child) {
       margin-right: 24px;
-			transition: color 0.3s, opacity 0.3s, box-shadow 0.3s, background-color 0.3s;
+      transition: color 0.3s, opacity 0.3s, box-shadow 0.3s,
+        background-color 0.3s;
     }
 
     &:first-child {
       margin-right: 49px;
     }
 
-		&--shift {
+    &--shift {
       margin-left: auto;
     }
+  }
 
+  &__link {
+		
     &:hover {
       opacity: 0.7;
     }
@@ -66,9 +65,6 @@
       box-shadow: initial;
       color: $green-200;
     }
-  }
-
-  &__link {
     &--delivery {
       position: relative;
       padding-left: 45px;
@@ -111,7 +107,7 @@
 
 .catalog {
   position: relative;
-	margin-right: 30px;
+  margin-right: 30px;
 
   &__btn {
     position: relative;
@@ -161,10 +157,10 @@
       box-shadow: 0 0 0 3px $green-200;
     }
 
-		&:active {
-			box-shadow: initial;
-			opacity: 0.5;
-		}
+    &:active {
+      box-shadow: initial;
+      opacity: 0.5;
+    }
 
     &.active {
       border-bottom-right-radius: 0;
@@ -184,11 +180,11 @@
 
     background-color: $white;
     border-radius: 0 0 6px 6px;
-		opacity: 0;
-		transition: opacity 0.3s;
+    opacity: 0;
+    transition: opacity 0.3s;
 
     &.active {
-			opacity: 1;
+      opacity: 1;
     }
   }
 
@@ -200,7 +196,7 @@
   &__link {
     display: block;
     padding: 15px 0 15px 24px;
-		font-size: 16px;
+    font-size: 16px;
     line-height: 1.2;
     transition: color 0.3s, box-shadow 0.3s;
 
@@ -244,17 +240,15 @@
     position: relative;
     width: 100%;
     padding: 15px 25px 15px 51px;
-		letter-spacing: 0.03em;
-		border-radius: 6px 0 0 6px;
+    letter-spacing: 0.03em;
+    border-radius: 6px 0 0 6px;
     color: $dark-800;
-    border: none;
-    outline: transparent;
 
-		&:hover {
-			&::placeholder {
-				color: $white;
-			}
-		}
+    &:hover {
+      &::placeholder {
+        color: $white;
+      }
+    }
 
     &:focus {
       box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
@@ -266,8 +260,8 @@
     margin: 0;
     padding: 15px 53px;
     text-transform: uppercase;
-		border-radius: 0 6px 6px 0;
-		letter-spacing: 0.03em;
+    border-radius: 0 6px 6px 0;
+    letter-spacing: 0.03em;
     background-color: $dark-800;
     color: $white;
     outline: transparent;
@@ -290,7 +284,7 @@
 
 .user-nav {
   display: flex;
-	margin-left: auto;
+  margin-left: auto;
 
   &__item {
     &:not(:last-child) {
